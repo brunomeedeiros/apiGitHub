@@ -11,24 +11,40 @@
     <div class="style-box">
         <div>
             <label>Repositório
-                <input class="space-aling">
+                <input class="space-aling" type="text" id="repositorio">
             </label>
         </div>
         <div>
             <label>Data inicial
-                <input class="space-aling">
+                <input class="space-aling" type="date" id="dataInicial">
             </label>
         </div>
         <div>
             <label>Data final
-                <input class="space-aling">
+                <input class="space-aling" type="date" id="dataFinal">
             </label>
         </div>
         <div class="align-center">
-            <button>Buscar</button>
+            <button type="submit">Buscar</button>
         </div>
     </div>
 </form>
 
 </body>
+
+<script>
+    const form = document.querySelector("form");
+    form.addEventListener('submit', function (event) {
+        event.preventDefault(); // Remove o refresh da página após o submit
+        const repositorio = document.querySelector("#repositorio").value;
+        const dataInicial = document.querySelector("#dataInicial").value;
+        const dataFinal = document.querySelector("#dataFinal").value;
+        //console.log(repositorio + " " + dataInicial + " " + dataFinal);
+
+        buscarCommits(repositorio, dataInicial, dataFinal);
+    });
+</script>
+
+<script type="text/javascript" src="scripts.js"></script>
+
 </html>
