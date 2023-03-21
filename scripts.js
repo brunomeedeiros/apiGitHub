@@ -28,6 +28,7 @@ function verificarMensagensCommits(commits) {
 }
 
 function mostrarTela(messageCommit) {
+    console.log('validando se esta cahm')
     const dados = document.querySelector("#dados");
 
     const uniqueMessages = new Set();

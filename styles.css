@@ -10,15 +10,26 @@ form {
 }
 
 .style-box {
-    background: #BE3455;
-    padding: 50px;
+    margin-top: 16px;
+    background: #94613B;
     border-radius: 8px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+body {
+    margin: 0;
 }
 
 .space-aling {
     display: flex;
     justify-content: center;
     margin-bottom: 10px;
+}
+
+.alinharCentro {
+    display: flex;
+    justify-content: center;
 }
 
 input {
@@ -32,4 +43,10 @@ input {
 
 button {
 
+}
+
+h3 {
+    color: black;
+    display: flex;
+    justify-content: center;
 }

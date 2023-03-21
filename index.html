@@ -7,29 +7,32 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<form class="box">
-    <div class="style-box">
-        <div>
-            <label>Repositório
-                <input class="space-aling" type="text" id="repositorio">
-            </label>
+<div>
+    <form class="box">
+        <div class="style-box">
+            <div>
+                <label>Repositório
+                    <input class="space-aling" type="text" id="repositorio">
+                </label>
+            </div>
+            <div>
+                <label>Data inicial
+                    <input class="space-aling" type="date" id="dataInicial">
+                </label>
+            </div>
+            <div>
+                <label>Data final
+                    <input class="space-aling" type="date" id="dataFinal">
+                </label>
+            </div>
+            <div class="align-center">
+                <button type="submit">Buscar</button>
+            </div>
         </div>
-        <div>
-            <label>Data inicial
-                <input class="space-aling" type="date" id="dataInicial">
-            </label>
-        </div>
-        <div>
-            <label>Data final
-                <input class="space-aling" type="date" id="dataFinal">
-            </label>
-        </div>
-        <div class="align-center">
-            <button type="submit">Buscar</button>
-        </div>
-    </div>
-</form>
+    </form>
+</div>
 
+<div id="dados"></div>
 </body>
 
 <script>
