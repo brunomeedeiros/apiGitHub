@@ -1,0 +1,35 @@
+form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box {
+    padding-left: 40%;
+    padding-right: 40%;
+    height: 200px;
+}
+
+.style-box {
+    background: #BE3455;
+    padding: 50px;
+    border-radius: 8px;
+}
+
+.space-aling {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+input {
+    border-radius: 5px;
+}
+
+.align-center {
+    display:flex;
+    justify-content: center;
+}
+
+button {
+
+}
