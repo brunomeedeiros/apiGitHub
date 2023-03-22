@@ -1,11 +1,32 @@
 function buscarCommits(repositorio, dataInicial, dataFinal) {
-    const url = `https://api.github.com/repos/${repositorio}/commits?since=${dataInicial}&until=${dataFinal}&per_page=100`;
+
+    if (repositorio.includes('https://github.com') || repositorio.includes('github.com/')) {
+        separarStringRepositorio(repositorio);
+        console.log(repositorio);
+        url = `https://api.github.com/repos/${repositorio}/commits?since=${dataInicial}&until=${dataFinal}&per_page=100`
+    } else {
+        const url = `https://api.github.com/repos/${repositorio}/commits?since=${dataInicial}&until=${dataFinal}&per_page=100`
+    }
 
     fetch(url).then(response => response.json()).then(commits => {
         console.log(commits);
 
         verificarMensagensCommits(commits);
     })
+}
+
+function separarStringRepositorio(repositorio){
+    const arrayRepositorio = repositorio.split("/");
+
+    if (arrayRepositorio.length > 3){
+        const repositorioFormatado = arrayRepositorio[3] + "/" + arrayRepositorio[4];
+
+        return repositorioFormatado;
+    } else{
+        const repositorioFormatado = arrayRepositorio[0] + "/" + arrayRepositorio[1];
+
+        return repositorioFormatado;
+    }
 }
 
 function verificarMensagensCommits(commits) {
@@ -35,7 +56,7 @@ function mostrarTela(messageCommit) {
 
     messageCommit.forEach(element => {
 
-        if (element.includes("Ignore-revision") || element.includes("Merge branch")){
+        if (element.includes("Ignore-revision") || element.includes("Merge branch")) {
             return;
         }
 
